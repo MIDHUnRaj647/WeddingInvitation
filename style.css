@@ -1283,10 +1283,13 @@ h2 em {
   display: grid;
   grid-template-columns: 1fr 80px 1fr;
   align-items: center;
+  width: 100%;
+  min-width: 0;
   margin-top: 45px;
 }
 
 .family-card {
+  min-width: 0;
   padding: 30px;
   border: 1px solid rgba(77, 40, 27, 0.28);
   background: rgba(255, 247, 225, 0.36);
@@ -1309,6 +1312,10 @@ h2 em {
   font-size: 2rem;
   font-weight: 500;
   margin: 4px 0;
+}
+
+.family-card h3 {
+  overflow-wrap: anywhere;
 }
 
 .family-card p {
@@ -1990,6 +1997,7 @@ h2 em {
   .family-grid,
   .couple-grid,
   .location-grid {
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -2000,7 +2008,12 @@ h2 em {
   }
 
   .family-card {
+    width: 100%;
     padding: 25px 18px;
+  }
+
+  .family-photo {
+    aspect-ratio: 16 / 10;
   }
 
   .couple-grid {
