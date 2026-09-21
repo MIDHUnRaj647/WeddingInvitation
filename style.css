@@ -1444,93 +1444,52 @@ h2 em {
   position: relative;
   border: 1px solid var(--line);
   overflow: hidden;
-  background:
-    linear-gradient(
-      25deg,
-      transparent 48%,
-      rgba(77, 40, 27, 0.2) 49% 50%,
-      transparent 51%
-    ),
-    linear-gradient(
-      150deg,
-      transparent 45%,
-      rgba(77, 40, 27, 0.14) 46% 47%,
-      transparent 48%
-    ),
-    #ecd8b4;
+  background: #ecd8b4;
 }
 
-.map-road {
+.map-sketch iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  filter: sepia(0.55) saturate(0.7) hue-rotate(325deg) contrast(0.9)
+    brightness(1.05);
+}
+
+.map-theme-wash {
   position: absolute;
-  height: 1px;
-  background: var(--line);
-  transform-origin: left;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(239, 218, 182, 0.14);
+  mix-blend-mode: multiply;
 }
 
-.road-a {
-  width: 115%;
-  left: -5%;
-  top: 55%;
-  transform: rotate(-15deg);
-}
-.road-b {
-  width: 95%;
-  left: 10%;
-  top: 25%;
-  transform: rotate(45deg);
-}
-.road-c {
-  width: 75%;
-  left: 5%;
-  top: 76%;
-  transform: rotate(8deg);
-}
-
-.map-tree {
+.map-caption {
   position: absolute;
-  font-size: 4rem;
-  opacity: 0.45;
-}
-
-.tree-a {
-  left: 12%;
-  top: 10%;
-}
-.tree-b {
-  right: 8%;
-  bottom: 7%;
-}
-
-.map-temple {
-  position: absolute;
-  right: 18%;
-  top: 16%;
-  font-size: 5rem;
-  color: var(--brown);
-  opacity: 0.75;
-}
-
-.map-pin {
-  position: absolute;
-  left: 52%;
-  top: 54%;
-  width: 36px;
-  height: 48px;
-  border: 2px solid var(--red);
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  color: var(--red);
+  left: 16px;
+  bottom: 16px;
   display: grid;
-  place-items: center;
-  font-size: 0.6rem;
+  gap: 2px;
+  padding: 8px 10px;
+  border-left: 2px solid var(--red);
+  background: rgba(251, 239, 214, 0.9);
+  color: var(--brown);
+  box-shadow: 0 4px 12px rgba(58, 30, 17, 0.12);
+  transform: rotate(-2deg);
 }
 
-.map-label {
-  position: absolute;
-  left: calc(52% + 35px);
-  top: 62%;
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
+.map-caption strong {
+  font-family: var(--script);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.map-caption span {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
 }
 
 .gallery-grid {
