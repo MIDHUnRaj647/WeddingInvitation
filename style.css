@@ -1292,10 +1292,14 @@ h2 em {
   background: rgba(255, 247, 225, 0.36);
 }
 
-.family-sketch {
-  font-size: 4rem;
-  color: var(--brown);
-  opacity: 0.7;
+.family-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid rgba(77, 40, 27, 0.38);
+  filter: sepia(0.28) saturate(0.78) contrast(0.94);
+  box-shadow: 0 5px 12px rgba(58, 30, 17, 0.12);
 }
 
 .family-card h3,
