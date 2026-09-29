@@ -1283,26 +1283,16 @@ h2 em {
   display: grid;
   grid-template-columns: 1fr 80px 1fr;
   align-items: center;
-  width: 100%;
+  width: min(850px, 100%);
   min-width: 0;
-  margin-top: 45px;
+  margin: 45px auto 0;
 }
 
 .family-card {
   min-width: 0;
-  padding: 30px;
-  border: 1px solid rgba(77, 40, 27, 0.28);
-  background: rgba(255, 247, 225, 0.36);
-}
-
-.family-photo {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid rgba(77, 40, 27, 0.38);
-  filter: sepia(0.28) saturate(0.78) contrast(0.94);
-  box-shadow: 0 5px 12px rgba(58, 30, 17, 0.12);
+  padding: 26px 22px;
+  border-top: 1px solid rgba(77, 40, 27, 0.28);
+  border-bottom: 1px solid rgba(77, 40, 27, 0.28);
 }
 
 .family-card h3,
@@ -1323,8 +1313,29 @@ h2 em {
 }
 
 .family-divider {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  min-height: 150px;
   font-size: 2rem;
   color: var(--gold);
+}
+
+.family-divider::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid rgba(77, 40, 27, 0.28);
+  content: "";
+}
+
+.family-divider span {
+  position: relative;
+  z-index: 1;
+  padding: 8px 0;
+  background: var(--paper);
 }
 
 .family-note {
@@ -2030,18 +2041,30 @@ h2 em {
     gap: 20px;
   }
 
-  .family-divider,
   .couple-heart {
     display: none;
   }
 
   .family-card {
     width: 100%;
-    padding: 25px 18px;
+    padding: 18px 12px;
   }
 
-  .family-photo {
-    aspect-ratio: 16 / 10;
+  .family-divider {
+    min-height: 30px;
+  }
+
+  .family-divider::before {
+    top: 50%;
+    right: 25%;
+    bottom: auto;
+    left: 25%;
+    border-top: 1px solid rgba(77, 40, 27, 0.28);
+    border-left: 0;
+  }
+
+  .family-divider span {
+    padding: 0 10px;
   }
 
   .couple-grid {
