@@ -1504,6 +1504,61 @@ h2 em {
   background: #168c4a;
   color: #fff;
 }
+.whatsapp-picker {
+  position: relative;
+}
+.whatsapp-picker summary {
+  list-style: none;
+  cursor: pointer;
+}
+.whatsapp-picker summary::-webkit-details-marker {
+  display: none;
+}
+.whatsapp-contacts {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  width: min(220px, calc(100vw - 24px));
+  min-width: 0;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper-light);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+.whatsapp-contacts a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #168c4a;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.whatsapp-contacts a:hover {
+  background: #116f3b;
+}
+.whatsapp-contacts a:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+.whatsapp-contact-icon {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+}
+.whatsapp-contacts span {
+  display: grid;
+  font-size: 0.7rem;
+}
+.whatsapp-contacts strong {
+  font-size: 0.82rem;
+}
 .location-actions .action-button:focus-visible {
   outline: 2px solid var(--red);
   outline-offset: 3px;
@@ -2155,7 +2210,6 @@ h2 em {
   .location-actions {
     margin-left: 0;
   }
-
   .gallery-grid {
     grid-template-columns: 1fr;
   }
@@ -2184,6 +2238,19 @@ h2 em {
   .action-icon {
     width: 12px;
     height: 12px;
+  }
+}
+
+@media (max-width: 300px) {
+  .location-actions {
+    flex-wrap: wrap;
+  }
+
+  .whatsapp-contacts {
+    left: 50%;
+    right: auto;
+    width: min(220px, calc(100vw - 40px));
+    transform: translateX(-50%);
   }
 }
 

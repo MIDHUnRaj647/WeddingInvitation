@@ -102,6 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButton.setAttribute("aria-expanded", String(open));
   });
 
+  document.addEventListener("pointerdown", (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    document.querySelectorAll(".whatsapp-picker[open]").forEach((picker) => {
+      if (!picker.contains(event.target)) picker.open = false;
+    });
+  });
+
   document.querySelectorAll(".nav a").forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("open");
