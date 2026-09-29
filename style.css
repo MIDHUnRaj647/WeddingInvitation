@@ -1457,6 +1457,46 @@ h2 em {
   background: var(--brown);
   color: var(--paper-light);
 }
+.location-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 0 28px 58px;
+}
+.location-actions .action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 8px 7px;
+  font-size: 0.58rem;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+.action-icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+.whatsapp-action {
+  color: #168c4a;
+  border-color: #168c4a;
+}
+.whatsapp-action:hover {
+  background: #168c4a;
+  color: #fff;
+}
+.location-actions .action-button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
 
 .map-sketch {
   height: 400px;
@@ -2089,6 +2129,9 @@ h2 em {
   .button {
     margin-left: 0;
   }
+  .location-actions {
+    margin-left: 0;
+  }
 
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -2101,6 +2144,23 @@ h2 em {
 
   .map-sketch {
     height: 280px;
+  }
+}
+
+@media (max-width: 360px) {
+  .location-actions {
+    gap: 3px;
+  }
+
+  .location-actions .action-button {
+    gap: 3px;
+    padding: 7px 4px;
+    font-size: 0.52rem;
+  }
+
+  .action-icon {
+    width: 12px;
+    height: 12px;
   }
 }
 
